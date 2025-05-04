@@ -32,21 +32,21 @@ const upload = multer({
 });
 
 // Get all media
-router.get('/', mediaController.getAllMedia);
+router.get('/media/', mediaController.getAllMedia);
 
 // Get media by id
-router.get('/:id', mediaController.getMediaById);
+router.get('/media/:id', mediaController.getMediaById);
 
 // Filter media by type (movie or book)
-router.get('/filter/:type', mediaController.filterMedia);
+router.get('/media/filter/:type', mediaController.filterMedia);
 
 // Create new media
-router.post('/', upload.single('image'), mediaController.createMedia);
+router.post('/media/', upload.single('image'), mediaController.createMedia);
 
 // Update media
-router.put('/:id', upload.single('image'), mediaController.updateMedia);
+router.put('/media/:id', upload.single('image'), mediaController.updateMedia);
 
 // Delete media
-router.delete('/:id', mediaController.deleteMedia);
+router.delete('/media/:id', mediaController.deleteMedia);
 
 module.exports = router;
